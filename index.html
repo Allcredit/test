@@ -65,7 +65,42 @@
             แชร์เพื่อปลดล็อค
           </button>
           </div>
+          <script> 
+  window.onload = function(e){
+      liff.init({liffId: "1656911523-Kz8kkVNq"}, function(){
+        liff.ready.then(() =>{
+          if(liff.isLoggedIn()){
+            var stext = document.getElementById("btnShare")
+            stext.onclick = () => {
+              var messagetext = [{
+    "type": "text",
+    "text": "ยืนยันรับเครดิตฟรี"
+}]
+              sendflex(messagetext)
+            }
+            
+          } else {
+            liff.login()
+            
+          }
           
+          
+        })
+        
+      })
+      
+      function sendflex(flex){
+        liff.sendMessages(flex).then(function(){
+          liff.closeWindow()
+          
+        })
+        
+      }
+      
+    }
+  
+          
+          </script>
         </div>
       </div>
     </main>
